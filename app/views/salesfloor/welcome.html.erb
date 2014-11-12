@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>List of Products</h1>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class = "col-md-4">
+      
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1><%= product.name %></h1>
+            <h2><%= number_to_currency(product.price) %></h2>
+            <h4><%= product.description %></h4>
+            <%= image_tag product.avatar.url(:medium) %>
+
+          <div>
+            <br>
+            <%= link_to 'Purchase', "#", class: "btn btn-default center" %>
+          </div>
+          <br>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+</div>
+
+<br>
